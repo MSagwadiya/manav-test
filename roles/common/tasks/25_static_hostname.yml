@@ -1,0 +1,4 @@
+--- 
+- name: Set static hostname
+  ansible.builtin.hostname:
+    name: "{{ static_hostname }}"

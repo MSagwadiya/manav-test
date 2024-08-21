@@ -1,0 +1,11 @@
+---
+# handlers file for interface
+- name: grub mkconfig
+  ansible.builtin.command:
+    cmd: /sbin/update-grub
+  become: true
+
+- name: Applying Netplan Configuration
+  command: netplan apply
+  listen: netplan apply config
+  become: true

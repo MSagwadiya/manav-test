@@ -1,0 +1,7 @@
+---
+- name: Running Roles From here
+  hosts: localhost
+  tasks:
+    - import_role:
+        name: common
+  

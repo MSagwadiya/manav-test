@@ -1,0 +1,10 @@
+- name: Git clone exanic software 
+  ansible.builtin.git:
+    repo: 'https://github.com/exablaze-oss/exanic-software.git'
+    dest: /exanic-software
+    version: "{{ exanic_version }}"
+
+- name: Run 'install' target as root
+  ansible.builtin.command:
+    chdir: /exanic-software
+    cmd: "make install"

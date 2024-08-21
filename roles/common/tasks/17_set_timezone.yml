@@ -1,0 +1,2 @@
+- name: set timezone to Asia/Kolkata
+  ansible.builtin.command: timedatectl set-timezone {{ timezone }}

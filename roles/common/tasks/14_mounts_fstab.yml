@@ -1,0 +1,13 @@
+- name: Add proc mount in fstab file 
+  ansible.builtin.lineinfile:
+    path: /etc/fstab
+    line: 'proc    /proc    proc    defaults,hidepid=2,gid=showpid     0     0'
+
+- name: Comment out /home in fstab
+  ansible.builtin.replace:
+    path: /etc/fstab
+    regexp: '^\s*(/home.*)'
+    replace: '#\1'
+
+
+    
